@@ -1,0 +1,823 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --blue:#1565c0;
+    --green: #66bb6a;
+    --skyblue: #26c6da;
+    --red: #bd4442;
+    --yellow: #ffc107;
+    --orange: #ff5723;
+    --grey: #907b7b;
+    --whitegrey: #f9fbff;
+    --darkgrey: #37474f;
+}
+.text-primary{
+    color: var(--blue);
+}
+
+body{
+    color: var(--darkgrey);
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+/* Start Header Section */
+
+header{
+    height: 100vh;
+    background: linear-gradient(
+        rgba(25, 25, 51, 0.7),
+        rgba(29, 47, 61, 0.7)
+    ),url("	https://zemle.theironnetwork.org/static/img/index-banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header .container-fluid{
+    padding: 0;
+}
+
+
+/* Start nav bar */
+.nav-scroll{
+    background-color: var(--blue);
+}
+.navbar{
+    padding: 0 100px;
+
+    transition: background-color .5s;
+}
+.navbar-toggler{
+    border: 1px solid #fff;
+}
+
+.search-box{
+    width: 300px;
+    background-color: #fff;
+    padding: 15px 20px;
+    margin:0;
+
+    position: absolute;
+    right: 6%;
+    top: 90%;
+
+    display: none;
+
+}
+
+.search-box .form-control{
+    border: none;
+}
+.search-box .form-control:focus{
+    box-shadow: none;
+}
+
+.search-box::before{
+    content: '';
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid #fff;
+
+    position: absolute;
+    top: -23%;
+    right: 5%;
+}
+
+.search-box.active{
+    display: block;
+}
+.nav-link{
+    color: rgb(243, 239, 239);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.nav-link:hover{
+    color: rgba(209, 209, 209, 0.978);
+}
+
+@media (max-width: 767px){
+    .navbar{
+        padding: 0 20px;
+    }
+    #nav .nav-item,.search-icon{
+        background-color: var(--blue);
+        border-bottom: 1px solid rgba(237, 235, 235, 0.5);
+        padding: 10px;
+        font-size: 14px;
+    }
+    .search-icon{
+        display: block;
+    }
+    #nav .nav-link{
+        font-weight: 600;
+    }
+    .search-box{
+        width: 95%;
+
+        right: 3%;
+        top: 100%;
+    }
+    .search-box::before{
+        top: -23%;
+        right: 93%;
+    }
+}
+
+/* End nav bar */
+
+/* Start Banner */
+.banners{
+    transform: translateY(50%);
+}
+.bannerrows{
+    margin: 0;
+    padding: 0;
+}
+.banners h1{
+    font-size: 4rem;
+}
+.btn-padds{
+    padding: 15px 50px;
+    font-weight: bold;
+}
+/* End Banner */
+
+/* End Header Section */
+
+/* Start Bussiness Section */
+
+.flip-cards{
+    width: 100%;
+    height: 200px;
+
+    perspective: 2000px;
+}
+
+.flip-card-inners{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform-style: preserve-3d;
+    /* transform: rotateY(0deg); */
+
+    transition: all .5s;
+}
+.flip-card-fronts,.flip-card-backs{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-backs{
+    background-color: var(--blue);
+    transform: rotateY(180deg);
+}
+.flip-cards:hover .flip-card-inners{
+    transform: rotateY(180deg);
+}
+
+.flip-card-backs p{
+    padding: 0 40px;
+
+    position: absolute;
+    top: 25%;
+    left: 0%;
+
+}
+
+.card-designs{
+    width: 100%;
+    height: 200px;
+    background-color: var(--blue);
+    text-align: center;
+
+    padding-top: 55px;
+}
+.green{
+    background-color: var(--green);
+}
+.skyblue{
+    background-color: var(--skyblue);
+}
+.red{
+    background-color: var(--red);
+}
+.yellow{
+    background-color: var(--yellow);
+}
+
+.card-designs h5{
+    margin-top: 18px;
+}
+
+/* End Bussiness Section */
+
+/* Start Project Section */
+
+.pjs{
+    background-color: var(--whitegrey);
+}
+
+.pj-img{
+    position: relative;
+}
+
+.pj-img::before,.pj-img::after{
+    content: '';
+    width: 80%;
+    height: 80%;
+
+    position: absolute;
+}
+.pj-img::before{
+    border-top: 15px solid var(--green);
+    border-left: 15px solid var(--green);
+
+    left: -5%;
+    top: -5%;
+}
+.pj-img::after{
+    border-bottom: 15px solid var(--green);
+    border-right: 15px solid var(--green);
+
+    left: 18%;
+    top: 25%;
+}
+
+@media (max-width:1200px){
+    .pj-img::after{
+        left: 14%;
+    }
+    .pj-img img{
+        width: 400px;
+    }
+}
+@media (max-width:990px){
+    .pj-img::after{
+        left: 14%;
+    }
+    .pj-img img{
+        width: 600px;
+    }
+}
+@media (max-width:765px){
+    .pj-img::after{
+        left: 14%;
+    }
+    .pj-img img{
+        width: 450px;
+    }
+}
+
+.pj-txts p:nth-of-type(1){
+    font-size: 18px;
+    letter-spacing: .5px;
+    padding: 15px 0;
+}
+.pj-txts p:nth-of-type(2){
+    font-size: 15px;
+}
+
+.btn-blues{
+    background-color: var(--blue);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+
+    padding: 15px 30px;
+}
+.btn-blues:hover{
+    background-color: #0d55a6;
+    color: #fff;
+}
+
+/* End Project Section */
+
+/* Start Work Section */
+.work-txts{
+    width: 90%;
+}
+.work-txts h2{
+    font-size: 40px;
+    font-weight: 700;
+}
+.work-txts h6{
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.designs div:nth-of-type(1){
+    width: 80px;
+    height: 50px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+    background-color: var(--blue);
+    border-radius: 50%;
+    margin-right: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.designs p{
+    font-size: 14px;
+}
+
+.work-imgs img{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    background-origin: top;
+    border-radius: 20px;
+}
+
+@media (max-width:990px){
+    .designs div:nth-of-type(1){
+        width: 65px;
+        height: 50px;
+    }
+}
+@media (max-width:767px){
+    .designs div:nth-of-type(1){
+        width: 75px;
+        height: 50px;
+    }
+}
+/* End Work Section */
+
+/* Start Awesome Project Section */
+.awpjs{
+    background-color: var(--darkgrey);
+}
+.awpjs h6{
+    font-size: 19px;
+    line-height: 40px;
+}
+
+/* .landscapes{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+} */
+
+.landscapes{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+.landscapes img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+
+    /* position: relative; */
+}
+
+.landscapes::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(21,101,192,0.85);
+
+    opacity: 0;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    transition: opacity .5s;
+}
+.landscapes::after{
+    content: '\f067';
+    width: 10%;
+    height: 15%;
+    font-family: "Font Awesome 5 pro";
+    color: var(--blue);
+    background-color: #fff;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+
+    opacity: 0;
+
+    transition: all .5s;
+}
+
+.landscapes:hover{
+    box-shadow: 5px 5px 15px #3d3c3c, -5px -5px 15px #3d3c3c;
+}
+.landscapes:hover::before{
+    opacity: 1;
+}
+.landscapes:hover::after{
+    top: 50%;
+    opacity: 1;
+}
+
+
+/* End Awesome Project Section */
+
+/* Start Blog Section */
+
+.blogsites{
+    background-color: var(--whitegrey);
+}
+
+.blogs{
+    border-radius: 15px;
+
+    transition: all .5s;
+}
+
+.blogs img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100px;
+    border-radius: 15px 15px 0 0;
+
+    padding: 0;
+}
+
+.blog-cons{
+    padding: 30px 25px;
+}
+.blog-footers{
+    border-top: 1px solid #ccc;
+}
+
+.blogs:hover{
+    transform: translateY(-4%);
+    box-shadow: 2px 4px 15px var(--grey);
+}
+
+/* End Blog Section */
+
+/* Start Team Section */
+.teams{
+    border: none;
+}
+.team-imgs{
+    width: 250px;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 2px 4px 5px #37474f;
+    text-align: center;
+
+    position: relative;
+    z-index: 3;
+}
+.img1 .ballons,.img2 .ballons,.img3 .ballons{
+    width: 120px;
+    height: 120px;
+    background-color: var(--green);
+    border-radius: 50%;
+
+    position: absolute;
+    right: 0;
+    bottom: 50%;
+
+    transition: all .5s;
+}
+.img1 .ballons::before,.img2 .ballons::before,.img3 .ballons::before{
+    content: '';
+    width: 65px;
+    height: 65px;
+    background-color: var(--skyblue);
+    border-radius: 50%;
+
+    position: absolute;
+    right: 220%;
+    bottom: 120%;
+
+}
+.img1 .ballons::after,.img2 .ballons::after,.img3 .ballons::after{
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+
+    position: absolute;
+    right: 195%;
+    bottom: 180%;
+
+}
+.img2 .ballons{
+    background-color: var(--skyblue);
+}
+.img2 .ballons::before{
+    background-color: var(--green);
+}
+
+.img2 .ballons::after{
+    background-color: var(--red);
+}
+.img3 .ballons{
+    background-color: var(--yellow);
+}
+.img3 .ballons::before{
+    background-color: var(--red);
+}
+
+.img3 .ballons::after{
+    background-color: var(--skyblue);
+}
+
+
+/* .team-imgs:hover span.ballons{
+    right: 10%;
+    bottom: 51%;
+    background-color: black;
+} */
+
+@media (max-width:992px){
+    .img1 .ballons,.img2 .ballons,.img3 .ballons{
+        right: 24%;
+    }
+}
+@media (max-width:767px){
+    .img1 .ballons,.img2 .ballons,.img3 .ballons{
+        right: 18%;
+    }
+}
+
+
+
+.teams h6{
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+}
+.teams p{
+    color: rgb(56, 55, 55);
+    font-size: .92rem;
+    font-weight: 400;
+    line-height: 25px;
+    padding: 12px 0;
+}
+/* End Team Section */
+
+/* Start Pricing Section */
+.pricings{
+    background: linear-gradient(rgba(12,30,51,.67),rgba(12,30,51,.67))
+    ,url("https://watermark.lovepik.com/photo/20211204/large/lovepik-man-sitting-in-coffee-shop-picture_501509710.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.pricing-items{
+    transition: all .5s;
+}
+.pricing-container{
+    padding: 0 20px;
+}
+.pricing-items h4{
+    color: var(--green);
+    font-weight: 700;
+}
+
+.price-itm-head{
+    padding: 30px 0 22px;
+    border-bottom: 1px solid #ccc;
+}
+.price-itm-head h1{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.getitems{
+    padding: 20px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.getitems p{
+    margin: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.getitems i{
+    color: var(--green);
+    padding-right: 8px;
+    font-size: 16px;
+}
+
+.text-icons{
+    color: var(--blue);
+}
+.pricing-items:hover{
+    transform: translateY(-3%);
+}
+
+.pricing-items:hover .text-icons{
+    color: var(--green);
+}
+.pricing-items:hover .btn-primary{
+    background-color: var(--green);
+    border-color: var(--green);
+}
+
+.active-item{
+    width: 100%;
+    background-color: var(--green);
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #fff;
+
+    position: absolute;
+    left: 0;
+    top: -10%;
+    
+    display: none;
+}
+.pickup{
+    display: block;
+}
+
+/* End Pricing Section */
+
+
+/* Start Clients Words Section */
+.clients{
+    background: linear-gradient(rgba(38,198,218,.88),rgba(38,198,218,.8))
+    ,url('./assets/img/40blackbox.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+}
+
+.carousel{
+    width: 70%;
+    text-align:center;
+    margin: auto;
+}
+.carousel-inner img{
+    width: 100px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin-bottom: 25px;
+}
+.carousel-inner p{
+    font-size: 18px;
+}
+.line{
+    width: 300px;
+    height: 2px;
+    background-color: rgb(111,182,196);
+    margin: 35px auto;
+}
+
+@media (max-width:767px){
+    .clients{
+        background: linear-gradient(rgba(38,198,218,.88),rgba(38,198,218,.8));
+    }
+}
+/* End Client Words section */
+
+/* Start Join Section */
+.joins{
+    background-color: var(--darkgrey);
+    padding: 70px 0;
+    color: #fff;
+}
+.joins .btn-group{
+    width: 100%;
+    height: 100%;
+}
+.joins input{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.joins .btn{
+    width: 30%;
+    color: #fff;
+    background-color: var(--green);
+    font-weight: 600;
+}
+/* End Join Section */
+
+/* Start Contact Section */
+
+.contacts{
+    padding-bottom: 160px;
+}
+.loca-dirs{
+    position: relative;
+}
+
+.location-containers{
+    width: 60%;
+    margin: auto;
+    box-shadow: 0 0 10px #aaa;
+    background-color: #fff;
+
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%);
+}
+.location-containers{
+    padding: 45px 40px;
+    border-radius: 10px;
+
+}
+.location-containers i{
+    color: var(--orange);
+    font-size: 35px;
+    padding-right: 20px;
+}
+
+.location-containers small{
+    display: block;
+}
+/* End Contact Section */
+
+/* Start Message Section */
+.messages{
+    background-color: var(--darkgrey);
+}
+.tit-txts{
+    font-size: 18px;
+}
+
+.message-containers{
+    width: 60%;
+    margin: 0 auto;
+}
+.message-containers .form-control{
+    color: #fff;
+    background-color: transparent;
+    margin-bottom: 20px;
+    padding: 13px;
+}
+.message-containers .btn{
+    color: #fff;
+    background-color: var(--green);
+    font-size: 17px;
+    font-weight: 600;
+    padding: 15px 0;
+}
+.message-containers .btn:hover{
+    background-color: #4b9b4f ;
+    border-color: var(--green);
+}
+
+.message-containers .form-control::placeholder{
+    color: #fff;
+}
+.message-containers .form-control:active{
+    background-color: transparent;
+}
+
+@media (max-width:965px){
+    .message-containers{
+        width: 80%;
+    }
+}
+@media (max-width:767px){
+    .message-containers{
+        width: 90%;
+    }
+}
+/* End Message Section */
+.footer{
+    color: #fff;
+    background-color: #263238;
+    padding: 50px;
+}
+
+.footer .list-inline-item{
+    cursor: pointer;
+}
+
+.footer .fa-brands{
+    font-size: 25px;
+    padding: 20px 10px 30px;
+    cursor: pointer;
+}
+
+/* Start Footer Section */
+
